@@ -1,4 +1,5 @@
-﻿using EFConnection.Models;
+﻿using EFConnection.Configurations;
+using EFConnection.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFConnection.Data
@@ -16,6 +17,14 @@ namespace EFConnection.Data
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<string>().HaveMaxLength(50);
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new TeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new FacultyConfiguration());
+            modelBuilder.ApplyConfiguration(new SubjectConfiguration());
+            modelBuilder.ApplyConfiguration(new StudentConfiguration());
         }
     }
 }

@@ -12,5 +12,5 @@ string GetProviderFromConfiguration()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", true, true)
     .Build();
-    return config["ConnectionString"];
+    return config.GetConnectionString("SchoolConnectionString");
 }
