@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConnectionPerformance", "DbConnectionPerformance\DbConnectionPerformance.csproj", "{F38730EC-EBB7-4C78-A743-B74313327EF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFConnection", "EFConnection\EFConnection.csproj", "{67C08628-AE7C-48F6-AB36-BC417D775E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOConnection", "ADOConnection\ADOConnection.csproj", "{23097229-A5CE-4875-A717-003543CF26C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperConnection", "DapperConnection\DapperConnection.csproj", "{9AF3488B-EF83-43A2-BFEE-526131769414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F38730EC-EBB7-4C78-A743-B74313327EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38730EC-EBB7-4C78-A743-B74313327EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38730EC-EBB7-4C78-A743-B74313327EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38730EC-EBB7-4C78-A743-B74313327EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C08628-AE7C-48F6-AB36-BC417D775E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C08628-AE7C-48F6-AB36-BC417D775E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C08628-AE7C-48F6-AB36-BC417D775E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C08628-AE7C-48F6-AB36-BC417D775E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23097229-A5CE-4875-A717-003543CF26C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23097229-A5CE-4875-A717-003543CF26C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23097229-A5CE-4875-A717-003543CF26C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23097229-A5CE-4875-A717-003543CF26C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF3488B-EF83-43A2-BFEE-526131769414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF3488B-EF83-43A2-BFEE-526131769414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF3488B-EF83-43A2-BFEE-526131769414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF3488B-EF83-43A2-BFEE-526131769414}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B871646-7F48-425E-8013-2891F073DF1D}
+	EndGlobalSection
+EndGlobal
