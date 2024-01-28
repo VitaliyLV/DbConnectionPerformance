@@ -19,7 +19,6 @@ namespace EFConnection.Configurations
                 new Student { Id = 8, FirstName = "Gregory", LastName = "Goyle", Grade = 4, InFacultyId = 4 },
                 new Student { Id = 9, FirstName = "Cho", LastName = "Chang", Grade = 3, InFacultyId = 3 },
                 new Student { Id = 10, FirstName = "Padma", LastName = "Patil", Grade = 3, InFacultyId = 3 }
-                
            );
         }
     }

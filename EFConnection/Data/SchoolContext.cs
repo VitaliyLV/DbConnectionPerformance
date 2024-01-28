@@ -14,6 +14,7 @@ namespace EFConnection.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<StudentMark> StudentMarks { get; set; }
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<string>().HaveMaxLength(50);
@@ -25,6 +26,23 @@ namespace EFConnection.Data
             modelBuilder.ApplyConfiguration(new FacultyConfiguration());
             modelBuilder.ApplyConfiguration(new SubjectConfiguration());
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
+            modelBuilder.ApplyConfiguration(new MarkConfiguration());
+        }
+
+        public void ReadStudentsFacultySubject()
+        {
+            var result = Students.Include(s => s.InFaculty).Include(s => s.Marks)
+                .Select(s => new
+                {
+                    fname = s.FirstName,
+                    lname = s.LastName,
+                    fc = s.InFaculty.Name,
+                    mk = s.Marks.Sum(n => n.TotalScore)
+                });
+            foreach (var s in result)
+            {
+                Console.WriteLine($"{s.fname, -10} {s.lname, 10} {s.fc, 15} {s.mk, 5}");
+            }
         }
     }
 }

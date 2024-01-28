@@ -1,10 +1,17 @@
 ﻿using EFConnection.Data;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 
 string connStr = GetProviderFromConfiguration();
 Console.WriteLine("Starting performance check");
 
-var schoolContext = new SchoolContextFactory().CreateDbContext(new[] {connStr});
+//EF
+var schoolContext = new SchoolContextFactory().CreateDbContext(null);
+Stopwatch swEF = Stopwatch.StartNew();
+swEF.Start();
+schoolContext.ReadStudentsFacultySubject();
+swEF.Stop();
+Console.WriteLine($"Time of EF Read for StudentsFacultySubject: {swEF.ElapsedMilliseconds}");
 
 string GetProviderFromConfiguration()
 {

@@ -8,6 +8,6 @@
         public int Grade { get; set; }
         public int InFacultyId { get; set; }
         public Faculty InFaculty { get; set; }
-        public List<Subject> Subjects { get; set; }
+        public List<StudentMark> Marks { get; set; }
     }
 }
