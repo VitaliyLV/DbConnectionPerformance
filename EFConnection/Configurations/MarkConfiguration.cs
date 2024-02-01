@@ -25,7 +25,14 @@ namespace EFConnection.Configurations
                 new StudentMark { Id = 12, StudentId = 4, SubjectId = 5, TotalScore = 7 },
                 new StudentMark { Id = 13, StudentId = 5, SubjectId = 1, TotalScore = 10 },
                 new StudentMark { Id = 14, StudentId = 5, SubjectId = 4, TotalScore = 5 },
-                new StudentMark { Id = 15, StudentId = 5, SubjectId = 5, TotalScore = 11 }
+                new StudentMark { Id = 15, StudentId = 5, SubjectId = 5, TotalScore = 11 },
+
+                new StudentMark { Id = 16, StudentId = 6, SubjectId = 1, TotalScore = 6 },
+                new StudentMark { Id = 17, StudentId = 6, SubjectId = 4, TotalScore = 2 },
+                new StudentMark { Id = 18, StudentId = 7, SubjectId = 5, TotalScore = 7 },
+                new StudentMark { Id = 19, StudentId = 7, SubjectId = 1, TotalScore = 4 },
+                new StudentMark { Id = 20, StudentId = 8, SubjectId = 4, TotalScore = 5 },
+                new StudentMark { Id = 21, StudentId = 8, SubjectId = 5, TotalScore = 9 }
                 );
         }
     }
