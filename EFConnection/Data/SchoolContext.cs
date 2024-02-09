@@ -1,10 +1,12 @@
-﻿using EFConnection.Configurations;
+﻿using DataReadLibrary;
+using EFConnection.Configurations;
 using EFConnection.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace EFConnection.Data
 {
-    public class SchoolContext : DbContext
+    public class SchoolContext : DbContext, IDbDataReader
     {
         public SchoolContext(DbContextOptions options): base(options)
         {

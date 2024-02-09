@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System.IO;
 
-namespace DbConnectionPerformance
+namespace DataReadLibrary
 {
     public static class QueryHelper
     {

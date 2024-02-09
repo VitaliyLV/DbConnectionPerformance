@@ -1,13 +1,21 @@
 ﻿using Dapper;
+using DataReadLibrary;
 using System.Data.SqlClient;
 
 namespace DapperConnection
 {
-    public class DapperHelper
+    public class DapperHelper: IDbDataReader
     {
-        public static void ReadStudentsFacultySubject(string connectionString, string query)
+        private readonly string connectionStr;
+
+        public DapperHelper(string connectionStr)
         {
-            using (var connection = new SqlConnection(connectionString))
+            this.connectionStr = connectionStr;
+        }
+        public void ReadStudentsFacultySubject()
+        {
+            string query = QueryHelper.StudentFacultyRead;
+            using (var connection = new SqlConnection(connectionStr))
             {
                 var students = connection.Query(query);
                 foreach (var student in students)

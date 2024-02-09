@@ -1,15 +1,24 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using DataReadLibrary;
+using Microsoft.Data.SqlClient;
 using System.Data.Common;
 
 namespace ADOConnection
 {
-    public class AdoHelper
+    public class AdoHelper : IDbDataReader
     {
-        public static void ReadStudentsFacultySubject(string connectionString, string query)
+        private readonly string connectionStr;
+
+        public AdoHelper(string connectionStr)
         {
+            this.connectionStr = connectionStr;
+        }
+
+        public void ReadStudentsFacultySubject()
+        {
+            string query = QueryHelper.StudentFacultyRead;
             using (DbConnection connection = SqlClientFactory.Instance.CreateConnection())
             {
-                connection.ConnectionString = connectionString;
+                connection.ConnectionString = connectionStr;
                 connection.Open();
                 DbCommand command = SqlClientFactory.Instance.CreateCommand();
                 command.Connection = connection;
@@ -24,11 +33,11 @@ namespace ADOConnection
             }
         }
 
-        public static void ClearCache(string connectionString)
+        public void ClearCache()
         {
             using (DbConnection connection = SqlClientFactory.Instance.CreateConnection())
             {
-                connection.ConnectionString = connectionString;
+                connection.ConnectionString = connectionStr;
                 connection.Open();
                 DbCommand command = SqlClientFactory.Instance.CreateCommand();
                 command.Connection = connection;
