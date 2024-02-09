@@ -6,16 +6,18 @@ namespace ADOConnection
 {
     public class AdoHelper : IDbDataReader
     {
-        private readonly string connectionStr;
+        private readonly string? connectionStr;
+        private readonly IQueryHelper helper;
 
-        public AdoHelper(string connectionStr)
+        public AdoHelper(IQueryHelper helper)
         {
-            this.connectionStr = connectionStr;
+            connectionStr = helper.GetProviderFromConfiguration();
+            this.helper = helper;
         }
 
         public void ReadStudentsFacultySubject()
         {
-            string query = QueryHelper.StudentFacultyRead;
+            string query = helper.StudentFacultyRead;
             using (DbConnection connection = SqlClientFactory.Instance.CreateConnection())
             {
                 connection.ConnectionString = connectionStr;

@@ -6,15 +6,17 @@ namespace DapperConnection
 {
     public class DapperHelper: IDbDataReader
     {
-        private readonly string connectionStr;
+        private readonly string? connectionStr;
+        private readonly IQueryHelper helper;
 
-        public DapperHelper(string connectionStr)
+        public DapperHelper(IQueryHelper helper)
         {
-            this.connectionStr = connectionStr;
+            this.connectionStr = helper.GetProviderFromConfiguration();
+            this.helper = helper;
         }
         public void ReadStudentsFacultySubject()
         {
-            string query = QueryHelper.StudentFacultyRead;
+            string query = helper.StudentFacultyRead;
             using (var connection = new SqlConnection(connectionStr))
             {
                 var students = connection.Query(query);
